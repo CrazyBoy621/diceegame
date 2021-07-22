@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+    <script src="./index.js"></script>
+    <script src="./jquery.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Refresh Me</h1>
+
+        <div class="dice">
+            <p>Player 1</p>
+            <img class="img1">
+        </div>
+
+        <div class="dice">
+            <p>Player 2</p>
+            <img class="img2" src="./images/dice6.png">
+        </div>
+
+    </div>
+
+
+</body>
+
+<footer>
+    🎲 Shohjahon Rakhmatov 🎲
+</footer>
+
+<script>
+
+
+    let randomNumber1 = Math.floor((Math.random()*6)+1)
+    let randomNumber2 = Math.floor((Math.random()*6)+1)
+    console.log(randomNumber2);
+    $(".img1").attr("src","./images/dice"+randomNumber1+".png");
+    $(".img2").attr("src","./images/dice"+randomNumber2+".png");
+    if (randomNumber1 > randomNumber2) {
+        $("h1").text("Player 1 WINS");
+    }
+    else if (randomNumber2 > randomNumber1) {
+        $("h1").text("Player 2 WINS");
+    }
+    else{
+        $("h1").text("Draw");
+    }
+</script>
+
+</html>
